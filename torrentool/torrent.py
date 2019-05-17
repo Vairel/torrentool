@@ -363,8 +363,8 @@ class Torrent(object):
 
         if not size_piece:
             size_piece = SIZE_MIN
-        if size_data > SIZE_MIN:
-            size_piece = SIZE_DEFAULT
+            if size_data > SIZE_MIN:
+                size_piece = SIZE_DEFAULT
 
         if size_piece > SIZE_MAX:
             size_piece = SIZE_MAX
