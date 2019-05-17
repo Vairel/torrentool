@@ -345,7 +345,7 @@ class Torrent(object):
         return target_files_, total_size
 
     @classmethod
-    def create_from(cls, src_path):
+    def create_from(cls, src_path, size_piece=None):
         """Returns Torrent object created from a file or a directory.
 
         :param str src_path:
@@ -361,7 +361,8 @@ class Torrent(object):
         CHUNKS_MIN = 1000  # todo use those limits as advised
         CHUNKS_MAX = 2200
 
-        size_piece = SIZE_MIN
+        if not size_piece:
+            size_piece = SIZE_MIN
         if size_data > SIZE_MIN:
             size_piece = SIZE_DEFAULT
 

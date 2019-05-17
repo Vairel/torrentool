@@ -1,6 +1,10 @@
 torrentool changelog
 ====================
 
+v1.0.3
+------
+# Fork from https://github.com/idlesign/torrentool
+* Torrent.create_from add params size_piece
 
 v1.0.2
 ------
