@@ -348,6 +348,7 @@ class Torrent(object):
     def create_from(cls, src_path, size_piece=None):
         """Returns Torrent object created from a file or a directory.
 
+        :param size_piece: int
         :param str src_path:
         :rtype: Torrent
         """
@@ -362,11 +363,8 @@ class Torrent(object):
         CHUNKS_MAX = 2200
 
         if not size_piece:
-            size_piece = SIZE_MIN
-            if size_data > SIZE_MIN:
-                size_piece = SIZE_DEFAULT
-
-        if size_piece > SIZE_MAX:
+            size_piece = SIZE_DEFAULT if size_data > SIZE_MIN else SIZE_MIN
+        elif size_piece > SIZE_MAX:
             size_piece = SIZE_MAX
 
         def read(filepath):

@@ -1,7 +1,7 @@
 torrentool changelog
 ====================
 
-v1.0.4
+v1.0.4 - v1.0.5
 ------
 * Fix is condition for torrent size_piece
 
